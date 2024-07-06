@@ -1,0 +1,65 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+   Наше время
+{% endblock %}
+
+{% block content %}
+
+    <p style="font-size: 24px; color: white; ">
+        Время - это наше самое ценное и необратимое достояние, которое безудержно утекает, не жалея ни о ком и ни о чем.
+        Каждая секунда, минута, час уходящего времени напоминают нам о важности задуматься о том, как мы его проводим.
+        Поглощенные повседневными заботами и рутиной, мы часто забываем ценить каждый момент, который дарует нам жизнь.
+        Вместо бесконечных отлаганий и прокрастинации, стоит задуматься о том, на что мы тратим свое драгоценное время.
+        Время не ждет никого и не возвращается назад, поэтому важно научиться ценить и использовать его с умом.
+        Проведенное время с близкими, освоенные навыки, достижения поставленных целей - все это становится ценным вложением в наше будущее.
+        Отложив отвлекающие факторы и сконцентрировавшись на важном, мы можем использовать время для саморазвития и самосовершенствования.
+        Пусть каждый момент нашей жизни будет наполнен смыслом, радостью и благополучием, чтобы мы не остались сожалеть о упущенных возможностях.
+        Задумайтесь о том, куда идет ваше время - это будет ключом к пониманию собственных ценностей и приоритетов.
+        Помните, что каждая минута, проведенная с пользой и осознанно, приносит нам удовлетворение и душевное спокойствие в нашем быстром и беспокойном мире.
+    </p>
+
+    <div class="clock" id="clock"></div>
+    <div class="date" id="date"></div>
+
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            hours = (hours < 10) ? "0" + hours : hours;
+            minutes = (minutes < 10) ? "0" + minutes : minutes;
+            seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+            var timeString = hours + ":" + minutes + ":" + seconds;
+            document.getElementById("clock").textContent = timeString;
+        }
+
+        function updateDate() {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            var day = now.getDate();
+
+            month = (month < 10) ? "0" + month : month;
+            day = (day < 10) ? "0" + day : day;
+
+            var dateString = day + "-" + month + "-" + year;
+            document.getElementById("date").textContent = dateString;
+        }
+
+        updateClock();
+        updateDate();
+        setInterval(updateClock, 1000);
+        setInterval(updateDate, 1000);
+    </script>
+
+{% endblock %}
+
+
+
+
+

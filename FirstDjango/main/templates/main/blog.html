@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+   Блог
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'main/img/khatha.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title d-flex justify-content-center">ХАТХА ЙОГА</h5>
+                        <p class="card-text">Хатха йога - это один из старейших и наиболее популярных видов йоги, который объединяет физические упражнения (асаны) с дыхательными техниками и медитацией. Практика хатха йоги способствует укреплению тела, развитию гибкости, улучшению концентрации и снятию стресса.</p>
+                        <a href="#" class="btn btn-primary d-flex justify-content-center">Читать статью</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'main/img/kunds.jpeg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title d-flex justify-content-center">КУНДАЛИНИ ЙОГА</h5>
+                        <p class="card-text">Кундалини йога - это древняя практика, направленная на пробуждение энергии кундалини, спящей у основания позвоночника. Путем выполнения динамических асан, дыхательных упражнений и медитации, практикующие кундалини йогу стремятся к гармонии тела, ума и души.</p>
+                        <a href="#" class="btn btn-primary d-flex justify-content-center">Читать статью</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{% static 'main/img/nidra.jpg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title d-flex justify-content-center">ЙОГА НИДРА</h5>
+                        <p class="card-text">"Йога нидра - это практика глубокой релаксации и медитации, целью которой является достижение физического, эмоционального и умственного расслабления. Во время сеанса йога нидры практикующий находится в состоянии полного покоя, при этом оставаясь в состоянии полного бодрствования.</p>
+                        <a href="#" class="btn btn-primary d-flex justify-content-center">Читать статью</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+{% endblock %}
+
+

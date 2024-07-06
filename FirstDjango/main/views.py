@@ -4,13 +4,22 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("<h1>Это мой первый проект на Django</h1>")
+    return render(request, 'main/index.html')
 
-def start(request):
-    return HttpResponse("<h1>Это страница start на Django</h1>")
+def blog(request):
+    context = {
+        'background_image': 'main/img/88.jpg'
+    }
+    return render(request, 'main/blog.html', context)
 
 def contacts(request):
-    return HttpResponse("<h1>Это  страница contacts на Django</h1>")
+    context = {
+        'background_image': 'main/img/99.jpg'
+    }
+    return render(request, 'main/contacts.html', context)
 
-def registration(request):
-    return HttpResponse("<h1>Это  страница регистрации на Django</h1>")
+def time(request):
+    context = {
+        'background_image': 'main/img/time.jpg'
+    }
+    return render(request, 'main/time.html', context)
