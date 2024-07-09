@@ -8,6 +8,8 @@ class events_news(models.Model):
         text = models.TextField('Новость')
         pub_date = models.DateTimeField('Дата публикации')
 
+        def __str__(self):
+                return self.title
         class Meta:
                 verbose_name = 'Новость'
                 verbose_name_plural = 'События и новости'
