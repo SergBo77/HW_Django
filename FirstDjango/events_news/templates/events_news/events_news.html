@@ -5,13 +5,33 @@
 {% endblock %}
 
 {% block content %}
-<h1>Новостная страница</h1>
+<style>
+  /* Стили для контура и фона новостей */
+  .news-container {
+    border: 1px solid #ccc; /* Контур вокруг каждой новости */
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный фон новостей */
+     border-radius: 10px; /* Скругление углов */
+  }
+
+  .news-title {
+    text-align: center; /* Выравнивание заголовка по центру */
+  }
+</style>
+
+<h1 class="news-title" style="color: white;">Новостная страница</h1>
 
 {% for event in events %}
-	<div>
-		<h3> {{ event.title }} </h3>
-		<p> {{ event.short_description }} </p>
-	</div>
+	<div class="news-container">
+		<h3 class="news-title">{{ event.title }}</h3>
+		<p><strong>Краткое описание:</strong> {{ event.short_description }}</p>
+		<p><strong>Новость:</strong> {{ event.text }}</p>
+		<div style="display: flex; justify-content: space-between;">
+			<p><strong>Автор:</strong> {{ event.name }}</p>
+			<p><strong>Дата публикации:</strong> {{ event.pub_date }}</p>
+		</div>
+    </div>
 {% endfor %}
 
 {% endblock %}

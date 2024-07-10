@@ -122,3 +122,15 @@ footer {
         font-size: 24px;
         color: white;
         }
+
+.news-container {
+    border: 1px solid #ccc; /* Контур вокруг каждой новости */
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный фон новостей */
+     border-radius: 10px; /* Скругление углов */
+ }
+
+.news-title {
+    text-align: center; /* Выравнивание заголовка по центру */
+}
