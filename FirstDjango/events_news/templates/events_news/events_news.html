@@ -22,16 +22,20 @@
 
 <h1 class="news-title" style="color: white;">Новостная страница</h1>
 
-{% for event in events %}
-	<div class="news-container">
-		<h3 class="news-title">{{ event.title }}</h3>
-		<p><strong>Краткое описание:</strong> {{ event.short_description }}</p>
-		<p><strong>Новость:</strong> {{ event.text }}</p>
-		<div style="display: flex; justify-content: space-between;">
-			<p><strong>Автор:</strong> {{ event.name }}</p>
-			<p><strong>Дата публикации:</strong> {{ event.pub_date }}</p>
-		</div>
-    </div>
-{% endfor %}
+	{% if news %}
+		{% for event in events %}
+			<div class="news-container">
+				<h3 class="news-title">{{ event.title }}</h3>
+				<p><strong>Краткое описание:</strong> {{ event.short_description }}</p>
+				<p><strong>Новость:</strong> {{ event.text }}</p>
+				<div style="display: flex; justify-content: space-between;">
+					<p><strong>Автор:</strong> {{ event.name }}</p>
+					<p><strong>Дата публикации:</strong> {{ event.pub_date }}</p>
+				</div>
+			</div>
+		{% endfor %}
+	{% else %}
+		<h4 class="news-title" style="color: white;">Новостей ещё нет.</h4>
+	{% endif %}
 
 {% endblock %}
